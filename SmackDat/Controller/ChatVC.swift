@@ -12,7 +12,7 @@ class ChatVC: UIViewController {
 
     // Outlets
     @IBOutlet weak var menuBtn: UIButton!
-    
+    @IBAction func prepareForUnwind(segue:UIStoryboardSegue) {}
     
     
     override func viewDidLoad() {
