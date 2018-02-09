@@ -12,6 +12,8 @@
 		85235AF6202DD371003810A0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85235AF5202DD371003810A0 /* Constants.swift */; };
 		85235AF8202DE56B003810A0 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85235AF7202DE56B003810A0 /* LoginVC.swift */; };
 		85235AFA202DEBA5003810A0 /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85235AF9202DEBA5003810A0 /* CreateAccountVC.swift */; };
+		85235AFC202E0458003810A0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85235AFB202E0458003810A0 /* GoogleService-Info.plist */; };
+		85235AFF202E388B003810A0 /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85235AFE202E388B003810A0 /* UserDataService.swift */; };
 		85417AD12017626E00B8E994 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85417AD02017626E00B8E994 /* AppDelegate.swift */; };
 		85417AD62017626E00B8E994 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85417AD42017626E00B8E994 /* Main.storyboard */; };
 		85417AD82017626E00B8E994 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85417AD72017626E00B8E994 /* Assets.xcassets */; };
@@ -27,6 +29,8 @@
 		85235AF5202DD371003810A0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		85235AF7202DE56B003810A0 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		85235AF9202DEBA5003810A0 /* CreateAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
+		85235AFB202E0458003810A0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		85235AFE202E388B003810A0 /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
 		85417ACD2017626E00B8E994 /* SmackDat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmackDat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85417AD02017626E00B8E994 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85417AD52017626E00B8E994 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -58,6 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				85235AF5202DD371003810A0 /* Constants.swift */,
+				85235AFE202E388B003810A0 /* UserDataService.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -93,6 +98,7 @@
 				85417AD72017626E00B8E994 /* Assets.xcassets */,
 				85417AD92017626E00B8E994 /* LaunchScreen.storyboard */,
 				85417ADC2017626E00B8E994 /* Info.plist */,
+				85235AFB202E0458003810A0 /* GoogleService-Info.plist */,
 			);
 			path = SmackDat;
 			sourceTree = "<group>";
@@ -214,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				85417ADB2017626E00B8E994 /* LaunchScreen.storyboard in Resources */,
+				85235AFC202E0458003810A0 /* GoogleService-Info.plist in Resources */,
 				85417AD82017626E00B8E994 /* Assets.xcassets in Resources */,
 				85417AD62017626E00B8E994 /* Main.storyboard in Resources */,
 			);
@@ -243,13 +250,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SmackDat-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D737B76FC8847DCBE5A113B7 /* [CP] Embed Pods Frameworks */ = {
@@ -258,9 +268,28 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SmackDat/Pods-SmackDat-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift/SocketIO.framework",
+				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketIO.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -277,6 +306,7 @@
 				85BF15C1201A43E200C8ECCC /* ChatVC.swift in Sources */,
 				85BF15C5201A4C1C00C8ECCC /* ChannelVC.swift in Sources */,
 				85235AFA202DEBA5003810A0 /* CreateAccountVC.swift in Sources */,
+				85235AFF202E388B003810A0 /* UserDataService.swift in Sources */,
 				85235AF8202DE56B003810A0 /* LoginVC.swift in Sources */,
 				85235AF0202DAF44003810A0 /* GradientView.swift in Sources */,
 				85417AD12017626E00B8E994 /* AppDelegate.swift in Sources */,

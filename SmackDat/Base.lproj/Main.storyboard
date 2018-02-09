@@ -221,6 +221,9 @@
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="LogIn:" destination="ytc-CU-upf" eventType="touchUpInside" id="j6y-Cb-8jT"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uFm-YM-d6R">
                                 <rect key="frame" x="331" y="25" width="28" height="28"/>
@@ -297,6 +300,8 @@
                         <viewLayoutGuide key="safeArea" id="2F8-18-di1"/>
                     </view>
                     <connections>
+                        <outlet property="emailFieldText" destination="kaX-J0-BDu" id="QH1-kj-HGR"/>
+                        <outlet property="passwordFieldText" destination="c3t-rs-V0T" id="sVI-YP-9Lx"/>
                         <segue destination="WuJ-In-hxg" kind="show" identifier="toCreateAccount" id="bxR-q2-D0e"/>
                     </connections>
                 </viewController>
@@ -329,6 +334,9 @@
                                 <state key="normal" title="Register">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="buttonRegister:" destination="WuJ-In-hxg" eventType="touchUpInside" id="4Hz-ox-SOx"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ua9-1m-m4Z">
                                 <rect key="frame" x="331" y="25" width="28" height="28"/>
@@ -449,6 +457,9 @@
                         <viewLayoutGuide key="safeArea" id="NBV-6j-JIF"/>
                     </view>
                     <connections>
+                        <outlet property="textFieldEmail" destination="7Cb-fM-JuD" id="Fw2-DG-02m"/>
+                        <outlet property="textFieldPassword" destination="cDi-cC-fFU" id="eIE-SN-kCf"/>
+                        <outlet property="textFieldUsername" destination="Qwc-cb-3Tl" id="CfE-NW-4qc"/>
                         <segue destination="Pin-8a-Vx3" kind="unwind" identifier="unwindToChannel" unwindAction="prepareForUnwindWithSegue:" id="Ojf-xF-IaB"/>
                     </connections>
                 </viewController>
