@@ -65,7 +65,7 @@ class LoginVC: UIViewController {
             "avatarColor": avatarColor
         ]
         
-        
+    }
     
 
 }
